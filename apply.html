@@ -1,1 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقديم للإدارة</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
 
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #111;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
+    background-color: #222;
+    padding: 20px;
+    width: 350px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+h2 {
+    color: #0f0;
+}
+
+p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+label {
+    display: block;
+    text-align: right;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #ccc;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #333;
+    border: 1px solid #0f0;
+    color: white;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 80px;
+    resize: none;
+}
+
+button {
+    margin-top: 15px;
+    width: 100%;
+    background-color: #0f0;
+    color: black;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #0c0;
+}
+</style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>تقديم للإدارة</h2>
+        <p>قدم طلبك للانضمام إلى فريق الإدارة</p>
+
+        <form id="adminForm">
+            <label for="username">اسم المستخدم</label>
+            <input type="text" id="username" placeholder="أدخل اسمك" required>
+
+            <label for="discordId">معرف ديسكورد</label>
+            <input type="text" id="discordId" placeholder="مثال: 1018435728776114208" required>
+
+            <label for="age">عمرك</label>
+            <input type="number" id="age" placeholder="أدخل عمرك" required>
+
+            <label for="reason">لماذا تريد الانضمام للإدارة؟</label>
+            <textarea id="reason" placeholder="اكتب السبب هنا..." required></textarea>
+
+            <label for="experience">ما هي خبراتك السابقة؟</label>
+            <textarea id="experience" placeholder="اكتب خبراتك هنا..." required></textarea>
+
+            <button type="submit">تقديم الطلب</button>
+        </form>
+    </div>
+
+<json>document.getElementById("adminForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // الحصول على القيم المدخلة
+    const username = document.getElementById("username").value;
+    const discordId = document.getElementById("discordId").value;
+    const age = document.getElementById("age").value;
+    const reason = document.getElementById("reason").value;
+    const experience = document.getElementById("experience").value;
+
+    // رابط Webhook الخاص بـ Discord (ضع الرابط هنا)
+    const webhookURL = "https://discord.com/api/webhooks/XXXXXXXX/YYYYYYYYYYYY";
+
+    // إنشاء رسالة مرسلة إلى الديسكورد بتنسيق JSON
+    const payload = {
+        content: "**طلب جديد للانضمام للإدارة!** 🚀",
+        embeds: [
+            {
+                title: "تفاصيل الطلب",
+                color: 65280, // اللون الأخضر
+                fields: [
+                    { name: "👤 اسم المستخدم", value: username, inline: true },
+                    { name: "📌 معرف ديسكورد", value: discordId, inline: true },
+                    { name: "🎂 العمر", value: age, inline: true },
+                    { name: "📝 سبب الانضمام", value: reason },
+                    { name: "💼 الخبرات السابقة", value: experience }
+                ],
+                footer: { text: "نظام التقديم للإدارة" }
+            }
+        ]
+    };
+
+    // إرسال الطلب إلى Webhook
+    fetch(webhookURL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+    })
+    .then(response => {
+        if (response.ok) {
+            alert("✅ تم إرسال الطلب بنجاح!");
+            document.getElementById("adminForm").reset();
+        } else {
+            alert("❌ حدث خطأ أثناء الإرسال!");
+        }
+    })
+    .catch(error => {
+        alert("❌ فشل الاتصال بـ Webhook. تأكد من صحة الرابط.");
+        console.error(error);
+    });
+});
+</json>
+
+</body>
+</html>
