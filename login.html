@@ -106,6 +106,85 @@ button {
 button:hover {
     background-color: #0c0;
 }
+/* ✅ تحسين شريط التنقل */
+nav {
+    background: #222;
+    padding: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* تحسين المسافة بين الأزرار */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    background: #111;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-size: 16px;
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
+}
+
+nav ul li a:hover {
+    background: #0f0;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* ✅ تحسين نموذج تسجيل الدخول */
+.form-container {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    width: 350px;
+    margin: auto;
+    text-align: center;
+}
+
+.form-container h2 {
+    color: #0f0;
+    margin-bottom: 15px;
+}
+
+.form-container input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #0f0;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+}
+
+.form-container button {
+    width: 95%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #0f0;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-container button:hover {
+    background: #00cc00;
+    transform: scale(1.05);
+}
+
 </style>
  <style>
         /* إعدادات عامة */
