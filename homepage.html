@@ -97,9 +97,21 @@
   <style>
 .team-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-member {
+    display: flex;
     justify-content: center;
-    gap: 20px; /* المسافة بين البطاقات */
-    flex-wrap: wrap; /* للسماح بالتجاوب على الشاشات الصغيرة */
+}
+
+.bottom-members {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* المسافة بين الأعضاء */
+    flex-wrap: wrap; /* لضمان التجاوب مع الشاشات الصغيرة */
 }
 
 .member-card {
@@ -128,7 +140,6 @@
     margin-top: 10px;
 }
 
-    </style>
 </head>
 <body>
 
@@ -180,7 +191,7 @@
     </script>
 <h2>فريق التطوير</h2>
   <section class="team-container">
-        <div class="team-members">
+        <div class="top-member">
 
             <div class="member-card">
                 <img src="https://images-ext-1.discordapp.net/external/MPtNdeouk8foXbs_3JaiDI67kjWCEYzSyEhUMPqbZdQ/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1291784658236870791/537bf08dc56f842537649311ef5de610.png?format=webp&quality=lossless" alt="مدير">
