@@ -218,9 +218,17 @@ a {
             <input type="password" id="password" placeholder="أدخل كلمة المرور" required>
 
             <button type="submit">دخول</button>
+
         </form>
 
-        <p>ليس لديك حساب؟ <a href="#">إنشاء حساب جديد</a></p>
+<p>ليس لديك حساب؟ <button onclick="goToRegister()">إنشاء حساب جديد</button></p>
+
+<script>
+function goToRegister() {
+    window.location.href = "register.html";
+}
+</script>
+
     </div>
 
     <script src="script.js"></script>
