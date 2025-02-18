@@ -94,6 +94,89 @@
             box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
         }
     </style>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            direction: rtl;
+        }
+
+        .team-container {
+            background: #1e1e1e;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+        }
+
+        h2 {
+            color: #0f0;
+            margin-bottom: 20px;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .member-card {
+            background: #222;
+            padding: 20px;
+            width: 250px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .member-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+        }
+
+        .member-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid #0f0;
+        }
+
+        .role {
+            background: #0f0;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            background: #0f0;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #0c0;
+        }
+    </style>
 
 </head>
 <body>
@@ -144,6 +227,36 @@
             });
         }
     </script>
+  <section class="team-container">
+        <h2>فريق التطوير</h2>
+        <div class="team-members">
+
+            <div class="member-card">
+                <img src="" alt="مدير">
+                <div class="role">مدير</div>
+                <h3>Odai ali</h3>
+                <p>مدير الخادم</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <img src="developer.jpg" alt="المطور">
+                <div class="role">المطور</div>
+                <h3>Flash</h3>
+                <p></p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <img src="founder.jpg" alt="المؤسس">
+                <div class="role">المؤسس</div>
+                <h3>SCAY</h3>
+                <p>مؤسس ومالك الخادم</p>
+                <div class="social-links">
+                    <a href="#">Twitter</a>
+                    <a href="#">Discord</a>
+                </div>
+            </div>
 
 </body>
 </html>
