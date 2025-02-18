@@ -126,6 +126,85 @@ nav ul li a:hover {
     color: black;
     transform: scale(1.05); /* تأثير بسيط عند التحويم */
 }
+/* ✅ جعل شريط التنقل مثبتًا في الأعلى */
+nav {
+    position: fixed; /* تثبيت الشريط في الأعلى */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #222;
+    padding: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* ضمان أن يكون فوق العناصر الأخرى */
+}
+
+/* ✅ تحسين شكل الأزرار داخل الشريط */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    display: block;
+    background: #111;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-size: 16px;
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
+}
+
+nav ul li a:hover {
+    background: #0f0;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* ✅ التأكد من أن محتوى الصفحة يبدأ بعد شريط التنقل */
+body {
+    padding-top: 80px; /* إضافة مسافة لتجنب تداخل النموذج مع الشريط */
+}
+
+/* ✅ تحسين موضع نموذج التسجيل */
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    text-align: center;
+}
+
+/* ✅ تحسين الحقول والأزرار */
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background: #0f0;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0c0;
+}
     </style>
 </head>
 <body>
