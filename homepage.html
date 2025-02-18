@@ -95,61 +95,39 @@
         }
     </style>
   <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-            direction: rtl;
-        }
-        body {
-            background-color: #121212;
-            color: white;
-            text-align: center;
-        }
-        .team-container {
-            padding: 20px;
-        }
-        .team-title {
-            color: #0f0;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .team-members {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .member-card {
-            background: #1e1e1e;
-            padding: 20px;
-            width: 250px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-            transition: 0.3s;
-        }
-        .member-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
-        }
-        .member-card img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-            border: 2px solid #0f0;
-        }
-        .role {
-            background: #0f0;
-            color: black;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 14px;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* المسافة بين البطاقات */
+    flex-wrap: wrap; /* للسماح بالتجاوب على الشاشات الصغيرة */
+}
+
+.member-card {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.member-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #0f0;
+}
+
+.role {
+    background-color: #0f0;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
     </style>
 </head>
 <body>
@@ -212,25 +190,23 @@
                 </div>
             </div>
 
-<div class="sub-group">
+<div class="team-container">
     <div class="member-card">
-        <img src="https://images-ext-1.discordapp.net/external/tTLSh0ecp_HTKNNmg-lJP0a_vuAndI3SZVTdYeikV8M/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/995022270026231849/3b30e016249e5637325c5f61b7f6741c.png?format=webp&quality=lossless" alt="المطور">
-        <div class="role">المطور</div>
+        <img src="https://images-ext-1.discordapp.net/external/tTLSh0ecp_HTKNNmg-lJP0a_vuAndI3SZVTdYeikV8M/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/995022270026231849/3b30e016249e5637325c5f61b7f6741c.png?format=webp&quality=lossless" alt="مطور">
         <h3>Flash</h3>
+        <span class="role">المطور</span>
+    </div>
+    
+    <div class="member-card">
+        <img src="https://images-ext-1.discordapp.net/external/f49D5-ZHhyiZpZLUnjgK7RL5hT4-eK6sotAAQo3FtY4/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1247109971146051617/0afd91e603e085e75aff293b85693286.png?format=webp&quality=lossless&width=640&height=640" alt="نائب مدير">
+        <h3>Qais Khaled</h3>
+        <span class="role">نائب مدير الخادم</span>
     </div>
 
     <div class="member-card">
-        <img src="https://cdn.discordapp.com/avatars/1247109971146051617/0afd91e603e085e75aff293b85693286.png?size=1024" alt="نائب مدير">
-        <div class="role">نائب مدير</div>
-        <h3>Qais Khaled</h3>
-        <p>نائب مدير الخادم</p>
-    </div>
-</div>
-    <div class="member-card">
         <img src="https://images-ext-1.discordapp.net/external/nyQeOur_bjm4LeEaD7Mv2IxvMIu4KH79PvyatxEfDjo/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1213896484442083399/7143104ed9dcb22f8aefbe87a4d8b468.png?format=webp&quality=lossless" alt="نائب مدير">
-        <div class="role">نائب مدير</div>
         <h3>Abo Saqer</h3>
-        <p>نائب مدير الخادم</p>
+        <span class="role">نائب مدير الخادم</span>
     </div>
 </div>
 
