@@ -4,107 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>خادم MTA - Perfect</title>
-/* إعدادات عامة */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    direction: rtl; /* دعم اللغة العربية */
-}
+    
+    <style>
+        /* إعدادات عامة */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            direction: rtl; /* دعم اللغة العربية */
+        }
 
-body {
-    background-color: #121212;
-    color: white;
-    text-align: center;
-}
+        body {
+            background-color: #121212;
+            color: white;
+            text-align: center;
+        }
 
-/* تنسيق شريط التنقل */
-nav {
-    background: #222;
-    padding: 10px 0;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-}
+        /* تنسيق شريط التنقل */
+        nav {
+            background: #222;
+            padding: 10px 0;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
 
-nav ul li {
-    margin: 0 15px;
-}
+        nav ul li {
+            margin: 0 15px;
+        }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: 0.3s;
-    font-size: 18px;
-}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-size: 18px;
+        }
 
-nav ul li a:hover {
-    background: #0f0;
-    color: black;
-}
+        nav ul li a:hover {
+            background: #0f0;
+            color: black;
+        }
 
-/* تنسيق العنوان الرئيسي */
-h1 {
-    margin: 20px 0;
-    font-size: 36px;
-}
+        /* تنسيق العنوان الرئيسي */
+        h1 {
+            margin: 20px 0;
+            font-size: 36px;
+        }
 
-/* تنسيق الأقسام */
-section {
-    background: #1e1e1e;
-    padding: 20px;
-    margin: 20px auto;
-    width: 80%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-}
+        /* تنسيق الأقسام */
+        section {
+            background: #1e1e1e;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+        }
 
-/* زر نسخ عنوان السيرفر */
-button {
-    background: #0f0;
-    color: black;
-    border: none;
-    padding: 10px 15px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: 0.3s;
-}
+        /* زر نسخ عنوان السيرفر */
+        button {
+            background: #0f0;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
 
-button:hover {
-    background: #0c0;
-}
+        button:hover {
+            background: #0c0;
+        }
 
-/* تذييل الصفحة */
-footer {
-    background: #222;
-    padding: 15px;
-    margin-top: 20px;
-    font-size: 14px;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-}
+        /* تذييل الصفحة */
+        footer {
+            background: #222;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+    </style>
+
 </head>
 <body>
+
     <header>
-
-<nav>
-    <ul>
-        <li><a href="homepage.html">الرئيسية</a></li>
-        <li><a href="login.html">تسجيل الدخول</a></li>
-        <li><a href="comments.html">التعليقات</a></li>
-        <li><a href="admin.html">الإدارة</a></li>
-        <li><a href="store.html">المتجر</a></li>
-    </ul>
-</nav>
-
+        <nav>
+            <ul>
+                <li><a href="homepage.html">الرئيسية</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+                <li><a href="comments.html">التعليقات</a></li>
+                <li><a href="admin.html">الإدارة</a></li>
+                <li><a href="store.html">المتجر</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="welcome">
@@ -112,12 +115,11 @@ footer {
         <p>استمتع بتجربة لعب فريدة مع مجتمع رائع من اللاعبين</p>
     </section>
 
-<section class="server-info">
-    <h2>🎮 سيرفر MTA</h2>
-    <p>🔗 عنوان السيرفر: <span id="serverIP">142.93.97.229:22500</span></p>
-    <button onclick="copyIP()">📋 نسخ عنوان السيرفر</button>
-</section>
-
+    <section class="server-info">
+        <h2>🎮 سيرفر MTA</h2>
+        <p>🔗 عنوان السيرفر: <span id="serverIP">142.93.97.229:22500</span></p>
+        <button onclick="copyIP()">📋 نسخ عنوان السيرفر</button>
+    </section>
 
     <section class="server-info">
         <div class="box">
@@ -134,6 +136,14 @@ footer {
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <script>
+        function copyIP() {
+            var copyText = document.getElementById("serverIP").innerText;
+            navigator.clipboard.writeText(copyText).then(() => {
+                alert("تم نسخ عنوان السيرفر: " + copyText);
+            });
+        }
+    </script>
+
 </body>
 </html>
