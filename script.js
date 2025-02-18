@@ -58,3 +58,58 @@ document.getElementById("adminForm").addEventListener("submit", function(event) 
         console.error(error);
     });
 });
+
+
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    if (username.trim() === "" || password.trim() === "") {
+        alert("❌ الرجاء إدخال جميع البيانات.");
+        return;
+    }
+
+    // إرسال البيانات إلى Webhook في Discord
+    const webhookURL = "https://discord.com/api/webhooks/XXXXXXXX/YYYYYYYYYYYY"; // ضع رابط Webhook هنا
+
+    const payload = {
+        content: "**🟢 تسجيل دخول جديد!**",
+        embeds: [
+            {
+                title: "تفاصيل تسجيل الدخول",
+                color: 65280,
+                fields: [
+                    { name: "👤 اسم المستخدم", value: username, inline: true },
+                    { name: "🔒 كلمة المرور", value: "********", inline: true } // لا ترسل كلمة المرور نصًا مباشرًا للحماية
+                ],
+                footer: { text: "نظام تسجيل الدخول" }
+            }
+        ]
+    };
+
+    fetch(webhookURL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+    })
+    .then(response => {
+        if (response.ok) {
+            alert("✅ تم تسجيل الدخول بنجاح!");
+            document.getElementById("loginForm").reset();
+        } else {
+            alert("❌ حدث خطأ أثناء تسجيل الدخول.");
+        }
+    })
+    .catch(error => {
+        alert("❌ فشل الاتصال بـ Webhook.");
+        console.error(error);
+    });
+});
+
+// وظيفة تسجيل الدخول عبر Discord
+function loginWithDiscord() {
+    alert("🚀 سيتم توجيهك إلى تسجيل الدخول عبر Discord قريبًا!");
+    // يمكنك هنا إضافة نظام OAuth 2.0 لتسجيل الدخول عبر Discord
+}
