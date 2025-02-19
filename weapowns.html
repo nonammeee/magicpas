@@ -554,6 +554,49 @@ button:hover {
         .buy-btn:hover {
             background: darkgreen;
         }
+.store-header {
+    text-align: center;
+    color: #00ff00;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+.store-header h2 {
+    font-size: 32px;
+}
+
+.categories {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.categories li {
+    display: inline-block;
+}
+
+.categories a {
+    text-decoration: none;
+    background: #222;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.categories .active {
+    background: #00ff00;
+    color: black;
+}
+
+.categories a:hover {
+    background: #00ff00;
+    color: black;
+}
+
     </style>
 </head>
 <body>
@@ -567,13 +610,13 @@ button:hover {
     </ul>
 </nav>
 
-<div class="sidebar">
-    <ul>
-        <li><a href="store.html">الكل</a></li>
+<div class="store-header">
+    <h2>متجر اللعبة</h2>
+    <p>اكتشف مجموعتنا الحصرية من العناصر والمميزات</p>
+    <ul class="categories">
+        <li><a href="store.html" class="active">الكل</a></li>
         <li><a href="weapowns.html">أسلحة</a></li>
-        <li> <a href="cars.html">السيارات</a></li>
-    </ul>
-</div>
+        <li><a href="cars.html">سيارات</a></li>
 
 
     <div class="store">
