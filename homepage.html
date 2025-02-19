@@ -250,7 +250,7 @@ nav ul li a:hover {
 
     <section class="server-info">
         <h2>🎮 سيرفر MTA</h2>
-        <p>🔗 عنوان السيرفر: <span id="serverIP">142.93.97.229:22700</span></p>
+        <p>🔗 عنوان السيرفر: <span id="serverIP">mtasa://142.93.97.229:22500</span></p>
         <button onclick="copyIP()">📋 نسخ عنوان السيرفر</button>
     </section>
 
@@ -260,7 +260,7 @@ nav ul li a:hover {
 <script>
 async function getServerInfo() {
     try {
-        const response = await fetch("https://api.game-state.com/142.93.97.229:22700/");
+        const response = await fetch("https://api.game-state.com/mtasa://142.93.97.229:22500");
         const data = await response.json();
 
         if (data.error) {
