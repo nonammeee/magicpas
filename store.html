@@ -4,6 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>متجر اللعبة</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+body {
+    background-color: #111 !important;
+}
+/* إبقاء الخط تحت زر "المتجر" فقط */
+nav ul li a[href="apply.html"]::after {
+    width: 100%;
+}
+
+textarea {
+    background-color: #222 !important;
+    color: white !important;
+}
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #222; /* اجعلها بنفس لون الخلفية الداكن */
+    border: 1px solid #0f0; /* حدود بنفس لون الحقول الأخرى */
+    color: white; /* لون النص */
+    border-radius: 5px;
+    resize: none; /* منع تغيير الحجم */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+    direction: rtl; /* دعم اللغة العربية */
+}
+
+/* ✅ تحسين شريط التنقل */
+nav {
+    background: #222;
+    padding: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px; /* مسافة بين الأزرار */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    background: #111; /* خلفية الأزرار */
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-size: 16px;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* ✅ تحسين التأثير عند التحويم */
+nav ul li a:hover {
+    transform: scale(1.05);
+    background: #111; /* تأكيد أن اللون لا يتغير */
+    color: white;
+}
+
+/* ✅ الشريط الأخضر السفلي عند التحويم */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: #0f0;
+    transition: width 0.3s;
+    border-radius: 0 0 8px 8px;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* ✅ تحسين نموذج تسجيل الدخول */
+.form-container {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    width: 350px;
+    margin: auto;
+    text-align: center;
+}
+
+.form-container h2 {
+    color: #0f0;
+    margin-bottom: 15px;
+}
+
+.form-container input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #0f0;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+}
+
+.form-container button {
+    width: 95%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #0f0;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-container button:hover {
+    background: #00cc00;
+    transform: scale(1.05);
+}
+
+/* ✅ تحسين التذييل */
+footer {
+    background: #222;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 14px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+    </style>
+
 <style>/* إعدادات عامة */
 body {
     font-family: Arial, sans-serif;
