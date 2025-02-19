@@ -7,16 +7,16 @@
 <style>
 .categories-container {
     display: flex;
-    justify-content: center; /* توسيط الأزرار */
+    justify-content: center; /* توسيط الأزرار أفقياً */
     align-items: center;
     margin-bottom: 20px; /* إضافة مسافة بين الأزرار والأسلحة */
 }
 
 .categories {
-    list-style: none;
     display: flex;
-    gap: 10px; /* مسافة بين الأزرار */
+    gap: 15px; /* مسافة بين الأزرار */
     padding: 0;
+    list-style: none;
 }
 
 .categories li {
@@ -30,12 +30,21 @@
     background-color: #222;
     color: white;
     transition: 0.3s;
+    text-align: center;
 }
 
 .categories a.active {
     background-color: limegreen;
     color: black;
 }
+
+/* ضبط توسيط قسم الأسلحة */
+.weapons-container {
+    display: flex;
+    justify-content: center; /* توسيط الكروت أفقياً */
+    gap: 20px;
+}
+
 /* تنسيق القائمة الجانبية */
 .store-header {
     text-align: right;
