@@ -4,7 +4,207 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>متجر اللعبة</title>
-    <link rel="stylesheet" href="styles.css">
+ <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #121212;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .register-container {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5);
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #5cff5c;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        input {
+            background: #2a2a2a;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .password-container img {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+        }
+
+        button {
+            background: #5cff5c;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #48d148;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        a {
+            color: #5cff5c;
+            text-decoration: none;
+        }
+/* تحسين شريط التنقل */
+nav {
+    background: #222;
+    padding: 15px 0;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    display: flex;
+    justify-content: center; /* توسيط الأزرار */
+    align-items: center;
+}
+
+/* ضبط الأزرار داخل الشريط */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px; /* مسافة بين الأزرار */
+    padding: 0;
+    margin: 0;
+}
+
+/* تنسيق الأزرار */
+nav ul li a {
+    background: #333;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-size: 16px;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0, 255, 0, 0.2);
+}
+
+/* تأثير التحويم عند تمرير الماوس */
+nav ul li a:hover {
+    background: #0f0;
+    color: black;
+    transform: scale(1.05); /* تأثير بسيط عند التحويم */
+}
+/* ✅ جعل شريط التنقل مثبتًا في الأعلى */
+nav {
+    position: fixed; /* تثبيت الشريط في الأعلى */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #222;
+    padding: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* ضمان أن يكون فوق العناصر الأخرى */
+}
+
+/* ✅ تحسين شكل الأزرار داخل الشريط */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    display: block;
+    background: #111;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-size: 16px;
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
+}
+
+nav ul li a:hover {
+    background: #0f0;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* ✅ التأكد من أن محتوى الصفحة يبدأ بعد شريط التنقل */
+body {
+    padding-top: 80px; /* إضافة مسافة لتجنب تداخل النموذج مع الشريط */
+}
+
+/* ✅ تحسين موضع نموذج التسجيل */
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    text-align: center;
+}
+
+/* ✅ تحسين الحقول والأزرار */
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background: #0f0;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0c0;
+}
+    </style>
 </head>
 <body>
     <header>
