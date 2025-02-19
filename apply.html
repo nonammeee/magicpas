@@ -5,191 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تقديم للإدارة</title>
 <style>@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
-/* خلفية الشريط العلوي */
-nav {
-    background-color: #222;       /* خلفية داكنة */
-    padding: 10px 0;             /* مسافة عمودية */
-    display: flex;               /* عرض العناصر أفقياً */
-    justify-content: center;     /* توسيط العناصر */
-    align-items: center;         /* محاذاة رأسية */
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-}
 
-/* إزالة النقط من القائمة */
-nav ul {
-    list-style: none;
+* {
     margin: 0;
     padding: 0;
-    display: flex;               /* عناصر أفقية */
-    gap: 15px;                   /* مسافة بين الأزرار */
-}
-
-/* العناصر داخل القائمة */
-nav ul li {
-    position: relative;          /* للسماح بوضع التأثيرات */
-}
-
-/* الروابط */
-nav ul li a {
-    display: block;
-    background: #111;            /* لون خلفية الأزرار */
-    color: #fff;                 /* لون النص */
-    text-decoration: none;       /* إزالة التسطير */
-    padding: 10px 20px;          /* حواف داخلية */
-    border-radius: 8px;          /* زوايا منحنية */
-    font-size: 16px;             /* حجم النص */
-    transition: 0.3s;            /* انتقال للتأثير */
-    box-shadow: 0 0 2px rgba(0, 255, 0, 0.2);
-}
-
-/* تأثير اللمسة الخضراء أسفل الزر */
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;                   /* في الأسفل تمامًا */
-    left: 0;
-    width: 0%;                   /* العرض صفر افتراضيًا */
-    height: 4px;                 /* سماكة الشريط الأخضر */
-    background: #0f0;            /* اللون الأخضر */
-    transition: width 0.3s;      /* انتقال عند التمرير */
-    border-radius: 0 0 8px 8px;  /* زوايا سفلية منحنية */
-}
-
-/* عند التحويم فوق الزر */
-nav ul li a:hover {
-    transform: scale(1.05);      /* تكبير بسيط */
-    background: #111;            /* حافظ على نفس اللون */
-}
-
-/* تكبير الشريط الأخضر عند التحويم */
-nav ul li a:hover::after {
-    width: 100%;                 /* يمتد عرض الشريط الأخضر */
-}
-
-body {
+    box-sizing: border-box;
     font-family: 'Cairo', sans-serif;
-    background-color: #111;
-    color: white;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+    direction: rtl; /* دعم اللغة العربية */
 }
 
-.form-container {
-    background-color: #222;
-    padding: 20px;
-    width: 350px;
-    margin: 50px auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-}
-
-h2 {
-    color: #0f0;
-}
-
-p {
-    color: #aaa;
-    font-size: 14px;
-}
-
-label {
-    display: block;
-    text-align: right;
-    font-size: 14px;
-    margin-top: 10px;
-    color: #ccc;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    background-color: #333;
-    border: 1px solid #0f0;
-    color: white;
-    border-radius: 5px;
-}
-
-textarea {
-    height: 80px;
-    resize: none;
-}
-
-button {
-    margin-top: 15px;
-    width: 100%;
-    background-color: #0f0;
-    color: black;
-    font-size: 16px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background-color: #0c0;
-}
-</style>
- <style>
-        /* إعدادات عامة */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-            direction: rtl; /* دعم اللغة العربية */
-        }
-
-        body {
-            background-color: #121212;
-            color: white;
-            text-align: center;
-        }
-
-        /* تنسيق العنوان الرئيسي */
-        h1 {
-            margin: 20px 0;
-            font-size: 36px;
-        }
-
-        /* تنسيق الأقسام */
-        section {
-            background: #1e1e1e;
-            padding: 20px;
-            margin: 20px auto;
-            width: 80%;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-        }
-
-        /* زر نسخ عنوان السيرفر */
-        button {
-            background: #0f0;
-            color: black;
-            border: none;
-            padding: 10px 15px;
-            margin-top: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background: #0c0;
-        }
-
-        /* تذييل الصفحة */
-        footer {
-            background: #222;
-            padding: 15px;
-            margin-top: 20px;
-            font-size: 14px;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-        }
 /* ✅ تحسين شريط التنقل */
 nav {
     background: #222;
@@ -203,26 +27,51 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px; /* تحسين المسافة بين الأزرار */
+    gap: 15px; /* مسافة بين الأزرار */
     padding: 0;
     margin: 0;
 }
 
+nav ul li {
+    position: relative;
+}
+
 nav ul li a {
-    background: #111;
+    display: block;
+    background: #111; /* خلفية الأزرار */
     color: white;
     text-decoration: none;
     padding: 12px 20px;
     border-radius: 8px;
     transition: 0.3s;
     font-size: 16px;
-    box-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+    position: relative;
+    overflow: hidden;
 }
 
+/* ✅ تحسين التأثير عند التحويم */
 nav ul li a:hover {
-    background: #0f0;
-    color: black;
     transform: scale(1.05);
+    background: #111; /* تأكيد أن اللون لا يتغير */
+    color: white;
+}
+
+/* ✅ الشريط الأخضر السفلي عند التحويم */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: #0f0;
+    transition: width 0.3s;
+    border-radius: 0 0 8px 8px;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 /* ✅ تحسين نموذج تسجيل الدخول */
@@ -268,6 +117,16 @@ nav ul li a:hover {
     background: #00cc00;
     transform: scale(1.05);
 }
+
+/* ✅ تحسين التذييل */
+footer {
+    background: #222;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 14px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
     </style>
 
 </head>
