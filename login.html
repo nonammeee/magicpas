@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تسجيل الدخول</title>
 <style>
+/* إبقاء الخط تحت زر "المتجر" فقط */
+nav ul li a[href="login.html"]::after {
+    width: 100%;
+}
+
 /* خلفية الشريط العلوي */
 nav {
     background-color: #222;       /* خلفية داكنة */
