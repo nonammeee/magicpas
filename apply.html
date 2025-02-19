@@ -5,6 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تقديم للإدارة</title>
 <style>@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+/* خلفية الشريط العلوي */
+nav {
+    background-color: #222;       /* خلفية داكنة */
+    padding: 10px 0;             /* مسافة عمودية */
+    display: flex;               /* عرض العناصر أفقياً */
+    justify-content: center;     /* توسيط العناصر */
+    align-items: center;         /* محاذاة رأسية */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+/* إزالة النقط من القائمة */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;               /* عناصر أفقية */
+    gap: 15px;                   /* مسافة بين الأزرار */
+}
+
+/* العناصر داخل القائمة */
+nav ul li {
+    position: relative;          /* للسماح بوضع التأثيرات */
+}
+
+/* الروابط */
+nav ul li a {
+    display: block;
+    background: #111;            /* لون خلفية الأزرار */
+    color: #fff;                 /* لون النص */
+    text-decoration: none;       /* إزالة التسطير */
+    padding: 10px 20px;          /* حواف داخلية */
+    border-radius: 8px;          /* زوايا منحنية */
+    font-size: 16px;             /* حجم النص */
+    transition: 0.3s;            /* انتقال للتأثير */
+    box-shadow: 0 0 2px rgba(0, 255, 0, 0.2);
+}
+
+/* تأثير اللمسة الخضراء أسفل الزر */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;                   /* في الأسفل تمامًا */
+    left: 0;
+    width: 0%;                   /* العرض صفر افتراضيًا */
+    height: 4px;                 /* سماكة الشريط الأخضر */
+    background: #0f0;            /* اللون الأخضر */
+    transition: width 0.3s;      /* انتقال عند التمرير */
+    border-radius: 0 0 8px 8px;  /* زوايا سفلية منحنية */
+}
+
+/* عند التحويم فوق الزر */
+nav ul li a:hover {
+    transform: scale(1.05);      /* تكبير بسيط */
+    background: #111;            /* حافظ على نفس اللون */
+}
+
+/* تكبير الشريط الأخضر عند التحويم */
+nav ul li a:hover::after {
+    width: 100%;                 /* يمتد عرض الشريط الأخضر */
+}
 
 body {
     font-family: 'Cairo', sans-serif;
