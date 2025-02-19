@@ -4,7 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>متجر اللعبة</title>
-<style>@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+.store-header {
+    text-align: center;
+    color: #00ff00;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+.store-header h2 {
+    font-size: 32px;
+}
+
+.categories {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.categories li {
+    display: inline-block;
+}
+
+.categories a {
+    text-decoration: none;
+    background: #222;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.categories .active {
+    background: #00ff00;
+    color: black;
+}
+
+.categories a:hover {
+    background: #00ff00;
+    color: black;
+}
 body {
     background-color: #111 !important;
 }
