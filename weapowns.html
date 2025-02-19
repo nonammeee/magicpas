@@ -5,6 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>متجر الأسلحة</title>
 <style>
+.categories-container {
+    display: flex;
+    justify-content: center; /* توسيط الأزرار */
+    align-items: center;
+    margin-bottom: 20px; /* إضافة مسافة بين الأزرار والأسلحة */
+}
+
+.categories {
+    list-style: none;
+    display: flex;
+    gap: 10px; /* مسافة بين الأزرار */
+    padding: 0;
+}
+
+.categories li {
+    display: inline-block;
+}
+
+.categories a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #222;
+    color: white;
+    transition: 0.3s;
+}
+
+.categories a.active {
+    background-color: limegreen;
+    color: black;
+}
 /* تنسيق القائمة الجانبية */
 .store-header {
     text-align: right;
@@ -613,14 +644,13 @@ button:hover {
     </ul>
 </nav>
 
-<div class="store-header">
-    <h2>متجر اللعبة</h2>
-    <p>اكتشف مجموعتنا الحصرية من العناصر والمميزات</p>
+<div class="categories-container">
     <ul class="categories">
         <li><a href="store.html" class="active">الكل</a></li>
-        <li><a href="weapowns.html">أسلحة</a></li>
+        <li><a href="weapons.html">أسلحة</a></li>
         <li><a href="cars.html">سيارات</a></li>
-
+    </ul>
+</div>
 
     <div class="store">
         <div class="item">
