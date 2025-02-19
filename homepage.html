@@ -255,10 +255,30 @@ nav ul li a:hover {
     </section>
 
     <section class="server-info">
-        <div class="box">
-            <h2>معلومات عن الخادم</h2>
-            <p>عدد اللاعبين المتصلين: <span id="playerCount">0</span></p>
-        </div>
+<div id="playersCount">جارٍ التحميل...</div>
+
+<script>
+async function getServerInfo() {
+    try {
+        const response = await fetch("server-info.php");
+        const data = await response.json();
+
+        if (data.error) {
+            document.getElementById("playersCount").innerHTML = data.error;
+        } else {
+            document.getElementById("playersCount").innerHTML =
+                `عدد اللاعبين المتصلين: ${data.players} / ${data.maxplayers}`;
+        }
+    } catch (error) {
+        document.getElementById("playersCount").innerHTML = "تعذر جلب بيانات السيرفر!";
+    }
+}
+
+// تحديث البيانات كل 10 ثوانٍ
+setInterval(getServerInfo, 10000);
+getServerInfo();
+</script>
+
         <div class="box">
             <h2>قوانين الخادم</h2>
             <p>نحن نلتزم بتوفير بيئة لعب آمنة وممتعة للجميع</p>
