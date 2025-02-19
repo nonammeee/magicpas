@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر الأسلحة</title>
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .store {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+        .item {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .buy-btn {
+            background: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .buy-btn:hover {
+            background: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>متجر الأسلحة</h1>
+    <div class="store">
+        <div class="item">
+            <img src="https://via.placeholder.com/150" alt="M4">
+            <h3>M4</h3>
+            <p>سلاح هجومي قوي</p>
+            <button class="buy-btn" onclick="buyWeapon('M4')">شراء</button>
+        </div>
+        <div class="item">
+            <img src="https://via.placeholder.com/150" alt="RPG">
+            <h3>RPG</h3>
+            <p>قاذف صواريخ مدمر</p>
+            <button class="buy-btn" onclick="buyWeapon('RPG')">شراء</button>
+        </div>
+    </div>
 
+    <script>
+        function buyWeapon(weapon) {
+            alert('تم شراء ' + weapon + '!');
+        }
+    </script>
+</body>
+</html>
