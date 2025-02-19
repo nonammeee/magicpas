@@ -4,7 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>خادم MTA - Magic Ps</title>
-<style>/* خلفية الشريط العلوي */
+<style>
+.button {
+    background-color: transparent; /* إزالة الخلفية */
+    color: white; /* جعل النص أبيض */
+    font-size: 16px; /* ضبط حجم النص */
+    font-weight: bold; /* جعل الخط عريض */
+    padding: 10px 20px; /* ضبط الهوامش الداخلية */
+    border: none; /* إزالة الإطار */
+    position: relative; /* تحديد موضع للخط السفلي */
+    cursor: pointer;
+}
+
+.button::after {
+    content: ""; /* عنصر إضافي لإنشاء الخط */
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* تحديد المسافة بين النص والخط */
+    width: 100%;
+    height: 3px; /* سماكة الخط */
+    background-color: green; /* لون الخط */
+}
+
+/* خلفية الشريط العلوي */
 nav {
     background-color: #222;       /* خلفية داكنة */
     padding: 10px 0;             /* مسافة عمودية */
@@ -285,6 +307,49 @@ nav ul li a:hover {
     font-weight: bold;
     display: inline-block;
     margin-top: 10px;
+}
+/* تنسيق شريط التنقل */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: inline-block;
+    position: relative;
+}
+
+/* الخط الأخضر عند تمرير الماوس */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* المسافة بين النص والخط */
+    width: 0;
+    height: 3px;
+    background-color: green;
+    transition: width 0.3s ease-in-out;
+}
+
+/* ظهور الخط الأخضر عند تمرير الماوس */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* إبقاء الخط تحت زر "المتجر" فقط */
+nav ul li a[href="store.html"]::after {
+    width: 100%;
 }
 
 </style>
