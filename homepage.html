@@ -5,6 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>خادم MTA - Magic Ps</title>
 <style>.server-container {
+  display: flex;           /* عرض العناصر في سطر أفقي */
+  justify-content: center; /* توسيط العنصر أفقيًا */
+  margin-top: 40px;        /* إبعاد الصندوق عن أعلى الصفحة */
+  margin-bottom: 40px;     /* إتاحة مساحة للمحتوى اللاحق */
+}
+
+.server-box {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 25px;
+  border-radius: 12px;
+  width: 50%;
+  min-width: 320px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+  border: 2px solid #4caf50;
+  transition: 0.3s ease-in-out;
+}
+
+.copy-btn {
+  background: #4caf50;
+  color: black;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.copy-btn:hover {
+  background: #3e8e41;
+  transform: scale(1.05);
+}
+
+.server-container {
     display: flex;
     justify-content: center;
     align-items: center;
