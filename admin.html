@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>فريق الإدارة</title>
 <style>
+/* إبقاء الخط تحت زر "الاداره" فقط */
+nav ul li a[href="admin.html"]::after {
+    width: 100%;
+}
+
 /* خلفية الشريط العلوي */
 nav {
     background-color: #222;       /* خلفية داكنة */
