@@ -4,231 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>خادم MTA - Magic Ps</title>
-<style>
-        body {
-            background-color: #0d0d0d;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 50px;
-            padding: 20px;
-        }
-        .box {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            width: 40%;
-            min-width: 320px;
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
-            border: 1px solid #4caf50;
-        }
-        h1 {
-            font-size: 28px;
-            margin-top: 20px;
-            color: #4caf50;
-        }
-        h2 {
-            color: #4caf50;
-            font-size: 22px;
-            border-bottom: 2px solid #4caf50;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            padding: 10px 0;
-            font-size: 18px;
-        }
-        .team {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .member {
-            background: rgba(0, 255, 0, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            width: 200px;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
-            border: 1px solid #4caf50;
-        }
-        .member img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 2px solid #4caf50;
-            margin-bottom: 10px;
-        }
-        .role {
-            background: #4caf50;
-            color: black;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 5px;
-            display: inline-block;
-        }
-    </style>
-        <style>
-        body {
-            background-color: #0d0d0d;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 50px;
-        }
-        .box {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            width: 45%;
-            min-width: 300px;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-        }
-        h2 {
-            color: #4caf50;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            padding: 5px 0;
-        }
-    </style>
-      <style>@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
-body {
-    background-color: #111 !important;
+<style>/* خلفية الشريط العلوي */
+nav {
+    background-color: #222;       /* خلفية داكنة */
+    padding: 10px 0;             /* مسافة عمودية */
+    display: flex;               /* عرض العناصر أفقياً */
+    justify-content: center;     /* توسيط العناصر */
+    align-items: center;         /* محاذاة رأسية */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
-        /* إعدادات عامة */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background-color: #000;
-            color: white;
-            text-align: center;
-        }
-
-        /* شريط التنقل */
-        nav {
-            background: #222;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-        }
-
-        nav ul li a {
-            background: #333;
-            color: white;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            background: #0f0;
-            color: black;
-        }
-
-        /* العنوان الرئيسي بتأثير النيون */
-        .welcome-box {
-            background: rgba(10, 10, 10, 0.8);
-            padding: 20px;
-            display: inline-block;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
-            margin-top: 30px;
-        }
-
-        .welcome-box h1 {
-            font-size: 32px;
-            color: #0f0;
-            text-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
-        }
-
-        .welcome-box p {
-            font-size: 16px;
-            margin-top: 10px;
-        }
-
-        /* صناديق المعلومات */
-        .info-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .info-box {
-            background: #222;
-            padding: 15px;
-            border-radius: 10px;
-            width: 250px;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-        }
-
-        .info-box h2 {
-            color: #0f0;
-            margin-bottom: 10px;
-        }
-
-
-textarea {
-    background-color: #222 !important;
-    color: white !important;
-}
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    background-color: #222; /* اجعلها بنفس لون الخلفية الداكن */
-    border: 1px solid #0f0; /* حدود بنفس لون الحقول الأخرى */
-    color: white; /* لون النص */
-    border-radius: 5px;
-    resize: none; /* منع تغيير الحجم */
-}
-
-* {
+/* إزالة النقط من القائمة */
+nav ul {
+    list-style: none;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Cairo', sans-serif;
-    direction: rtl; /* دعم اللغة العربية */
+    display: flex;               /* عناصر أفقية */
+    gap: 15px;                   /* مسافة بين الأزرار */
 }
+
+/* العناصر داخل القائمة */
+nav ul li {
+    position: relative;          /* للسماح بوضع التأثيرات */
+}
+
+/* الروابط */
+nav ul li a {
+    display: block;
+    background: #111;            /* لون خلفية الأزرار */
+    color: #fff;                 /* لون النص */
+    text-decoration: none;       /* إزالة التسطير */
+    padding: 10px 20px;          /* حواف داخلية */
+    border-radius: 8px;          /* زوايا منحنية */
+    font-size: 16px;             /* حجم النص */
+    transition: 0.3s;            /* انتقال للتأثير */
+    box-shadow: 0 0 2px rgba(0, 255, 0, 0.2);
+}
+
+/* تأثير اللمسة الخضراء أسفل الزر */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;                   /* في الأسفل تمامًا */
+    left: 0;
+    width: 0%;                   /* العرض صفر افتراضيًا */
+    height: 4px;                 /* سماكة الشريط الأخضر */
+    background: #0f0;            /* اللون الأخضر */
+    transition: width 0.3s;      /* انتقال عند التمرير */
+    border-radius: 0 0 8px 8px;  /* زوايا سفلية منحنية */
+}
+
+/* عند التحويم فوق الزر */
+nav ul li a:hover {
+    transform: scale(1.05);      /* تكبير بسيط */
+    background: #111;            /* حافظ على نفس اللون */
+}
+
+/* تكبير الشريط الأخضر عند التحويم */
+nav ul li a:hover::after {
+    width: 100%;                 /* يمتد عرض الشريط الأخضر */
+}
+
 
 /* ✅ تحسين شريط التنقل */
 nav {
@@ -243,51 +79,26 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 15px; /* مسافة بين الأزرار */
+    gap: 20px; /* تحسين المسافة بين الأزرار */
     padding: 0;
     margin: 0;
 }
 
-nav ul li {
-    position: relative;
-}
-
 nav ul li a {
-    display: block;
-    background: #111; /* خلفية الأزرار */
+    background: #111;
     color: white;
     text-decoration: none;
     padding: 12px 20px;
     border-radius: 8px;
     transition: 0.3s;
     font-size: 16px;
-    box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
-    position: relative;
-    overflow: hidden;
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
 }
 
-/* ✅ تحسين التأثير عند التحويم */
 nav ul li a:hover {
-    transform: scale(1.05);
-    background: #111; /* تأكيد أن اللون لا يتغير */
-    color: white;
-}
-
-/* ✅ الشريط الأخضر السفلي عند التحويم */
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 4px;
     background: #0f0;
-    transition: width 0.3s;
-    border-radius: 0 0 8px 8px;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
+    color: black;
+    transform: scale(1.05);
 }
 
 /* ✅ تحسين نموذج تسجيل الدخول */
@@ -334,17 +145,95 @@ nav ul li a:hover::after {
     transform: scale(1.05);
 }
 
-/* ✅ تحسين التذييل */
-footer {
-    background: #222;
-    padding: 15px;
-    margin-top: 20px;
-    font-size: 14px;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-}
+        /* إعدادات عامة */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            direction: rtl; /* دعم اللغة العربية */
+        }
 
+        body {
+            background-color: #121212;
+            color: white;
+            text-align: center;
+        }
+
+        /* تنسيق شريط التنقل */
+        nav {
+            background: #222;
+            padding: 10px 0;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            background: #0f0;
+            color: black;
+        }
+
+        /* تنسيق العنوان الرئيسي */
+        h1 {
+            margin: 20px 0;
+            font-size: 36px;
+        }
+
+        /* تنسيق الأقسام */
+        section {
+            background: #1e1e1e;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+        }
+
+        /* زر نسخ عنوان السيرفر */
+        button {
+            background: #0f0;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #0c0;
+        }
+
+        /* تذييل الصفحة */
+        footer {
+            background: #222;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
     </style>
-<style>
+  <style>
 .team-container {
     display: flex;
     flex-direction: column;
@@ -396,22 +285,6 @@ footer {
     font-weight: bold;
     display: inline-block;
     margin-top: 10px;
-}
-textarea {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 2px solid #0f0; /* حدود خضراء مثل الحقول الأخرى */
-    border-radius: 5px;
-    background: #222; /* خلفية داكنة متناسقة مع التصميم */
-    color: white; /* لون النص */
-    resize: none; /* منع تغيير الحجم */
-    font-size: 16px;
-}
-
-textarea::placeholder {
-    color: #bbb; /* لون النص التوضيحي */
-    opacity: 0.7;
 }
 
 </style>
