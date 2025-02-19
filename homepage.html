@@ -5,149 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>خادم MTA - Magic Ps</title>
     
-    <style>
-/* خلفية الشريط العلوي */
-nav {
-    background-color: #222;       /* خلفية داكنة */
-    padding: 10px 0;             /* مسافة عمودية */
-    display: flex;               /* عرض العناصر أفقياً */
-    justify-content: center;     /* توسيط العناصر */
-    align-items: center;         /* محاذاة رأسية */
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-}
-
-/* إزالة النقط من القائمة */
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;               /* عناصر أفقية */
-    gap: 15px;                   /* مسافة بين الأزرار */
-}
-
-/* العناصر داخل القائمة */
-nav ul li {
-    position: relative;          /* للسماح بوضع التأثيرات */
-}
-
-/* الروابط */
-nav ul li a {
-    display: block;
-    background: #111;            /* لون خلفية الأزرار */
-    color: #fff;                 /* لون النص */
-    text-decoration: none;       /* إزالة التسطير */
-    padding: 10px 20px;          /* حواف داخلية */
-    border-radius: 8px;          /* زوايا منحنية */
-    font-size: 16px;             /* حجم النص */
-    transition: 0.3s;            /* انتقال للتأثير */
-    box-shadow: 0 0 2px rgba(0, 255, 0, 0.2);
-}
-
-/* تأثير اللمسة الخضراء أسفل الزر */
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;                   /* في الأسفل تمامًا */
-    left: 0;
-    width: 0%;                   /* العرض صفر افتراضيًا */
-    height: 4px;                 /* سماكة الشريط الأخضر */
-    background: #0f0;            /* اللون الأخضر */
-    transition: width 0.3s;      /* انتقال عند التمرير */
-    border-radius: 0 0 8px 8px;  /* زوايا سفلية منحنية */
-}
-
-/* عند التحويم فوق الزر */
-nav ul li a:hover {
-    transform: scale(1.05);      /* تكبير بسيط */
-    background: #111;            /* حافظ على نفس اللون */
-}
-
-/* تكبير الشريط الأخضر عند التحويم */
-nav ul li a:hover::after {
-    width: 100%;                 /* يمتد عرض الشريط الأخضر */
-}
-
-
-/* ✅ تحسين شريط التنقل */
-nav {
-    background: #222;
-    padding: 10px 0;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px; /* تحسين المسافة بين الأزرار */
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li a {
-    background: #111;
-    color: white;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    transition: 0.3s;
-    font-size: 16px;
-    box-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
-}
-
-nav ul li a:hover {
-    background: #0f0;
-    color: black;
-    transform: scale(1.05);
-}
-
-/* ✅ تحسين نموذج تسجيل الدخول */
-.form-container {
-    background: #111;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
-    width: 350px;
-    margin: auto;
-    text-align: center;
-}
-
-.form-container h2 {
-    color: #0f0;
-    margin-bottom: 15px;
-}
-
-.form-container input {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 2px solid #0f0;
-    border-radius: 5px;
-    background: #222;
-    color: white;
-}
-
-.form-container button {
-    width: 95%;
-    padding: 12px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 5px;
-    background: #0f0;
-    color: black;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.form-container button:hover {
-    background: #00cc00;
-    transform: scale(1.05);
-}
-
-        /* إعدادات عامة */
+      <style>
+        /* ✅ إعدادات عامة */
         * {
             margin: 0;
             padding: 0;
@@ -162,79 +21,123 @@ nav ul li a:hover {
             text-align: center;
         }
 
-        /* تنسيق شريط التنقل */
+        /* ✅ شريط التنقل */
         nav {
             background: #222;
             padding: 10px 0;
             box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            display: flex;
+            justify-content: center;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
         }
 
         nav ul li a {
+            background: #111;
             color: white;
             text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
+            padding: 12px 20px;
+            border-radius: 8px;
             transition: 0.3s;
-            font-size: 18px;
+            font-size: 16px;
+            box-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
         }
 
         nav ul li a:hover {
             background: #0f0;
             color: black;
+            transform: scale(1.05);
         }
 
-        /* تنسيق العنوان الرئيسي */
-        h1 {
-            margin: 20px 0;
-            font-size: 36px;
-        }
-
-        /* تنسيق الأقسام */
-        section {
-            background: #1e1e1e;
+        /* ✅ نموذج التقديم */
+        .form-container {
+            background: #111;
             padding: 20px;
-            margin: 20px auto;
-            width: 80%;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+            width: 350px;
+            margin: auto;
+            text-align: center;
+            margin-top: 30px;
         }
 
-        /* زر نسخ عنوان السيرفر */
-        button {
+        .form-container h2 {
+            color: #0f0;
+            margin-bottom: 15px;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #0f0;
+            border-radius: 5px;
+            background: #222;
+            color: white;
+            font-size: 16px;
+        }
+
+        .form-container textarea {
+            height: 80px; /* تحديد ارتفاع مناسب */
+            resize: none; /* منع تغيير الحجم */
+        }
+
+        .form-container input::placeholder,
+        .form-container textarea::placeholder {
+            color: #bbb;
+            opacity: 0.7;
+        }
+
+        .form-container button {
+            width: 95%;
+            padding: 12px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
             background: #0f0;
             color: black;
-            border: none;
-            padding: 10px 15px;
-            margin-top: 10px;
-            cursor: pointer;
-            border-radius: 5px;
             font-size: 16px;
+            cursor: pointer;
             transition: 0.3s;
         }
 
-        button:hover {
-            background: #0c0;
+        .form-container button:hover {
+            background: #00cc00;
+            transform: scale(1.05);
         }
 
-        /* تذييل الصفحة */
-        footer {
-            background: #222;
-            padding: 15px;
-            margin-top: 20px;
-            font-size: 14px;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-        }
     </style>
+</head>
+<body>
+
+    <!-- ✅ شريط التنقل -->
+    <nav>
+        <ul>
+            <li><a href="#">الرئيسية</a></li>
+            <li><a href="#">حول</a></li>
+            <li><a href="#">التقديم</a></li>
+            <li><a href="#">اتصل بنا</a></li>
+        </ul>
+    </nav>
+
+    <!-- ✅ نموذج التقديم -->
+    <div class="form-container">
+        <h2>تقديم للإدارة</h2>
+        <p>قدم طلبك للانضمام إلى فريق الإدارة</p>
+        <input type="text" placeholder="ادخل اسمك">
+        <input type="text" placeholder="معرف ديسكورد - مثال: 1018435728776114208">
+        <input type="number" placeholder="ادخل عمرك">
+        <textarea placeholder="لماذا تريد الانضمام للإدارة؟"></textarea>
+        <textarea placeholder="ما هي خبرتك السابقة؟"></textarea>
+        <button>تقديم الطلب</button>
+    </div>
   <style>
 .team-container {
     display: flex;
