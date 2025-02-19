@@ -4,142 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>متجر اللعبة</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: #fff;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-nav {
-    background-color: #222;
-    padding: 10px 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-}
-
-nav ul li a:hover {
-    background-color: #00ff00;
-}
-
-h1 {
-    color: #00ff00;
-    margin-top: 20px;
-}
-
-.categories {
-    margin: 20px 0;
-}
-
-.categories button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    margin: 5px;
-    border-radius: 5px;
-}
-
-.categories button.active,
-.categories button:hover {
-    background-color: #00ff00;
-}
-
-.store {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.item {
-    background-color: #222;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-}
-
-.item h2 {
-    color: #00ff00;
-}
-
-.item ul {
-    list-style: none;
-    padding: 0;
-}
-
-.item ul li {
-    margin: 5px 0;
-}
-
-.price {
-    display: block;
-    font-size: 20px;
-    margin: 10px 0;
-    color: #00ff00;
-}
-
-button {
-    background-color: #00ff00;
-    color: #111;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #008000;
-}
-
-.vip-tag, .special-tag, .exclusive-tag {
-    display: block;
-    background-color: red;
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 12px;
-    margin-bottom: 10px;
-}
-.vip-tag { background-color: gold; color: black; }
-.special-tag { background-color: red; }
-.exclusive-tag { background-color: yellow; color: black; }
-
-</style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-   <header>
+    <header>
         <nav>
             <ul>
-                <li><a href="homepage.html">الرئيسية</a></li>
-                <li><a href="login.html">تسجيل الدخول</a></li>
-                <li><a href="apply.html">تقديم الادارة</a></li>
-                <li><a href="admin.html">الإدارة</a></li>
-                <li><a href="store.html">المتجر</a></li>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">تسجيل الدخول</a></li>
+                <li><a href="#">التقديمات</a></li>
+                <li><a href="#">الإدارة</a></li>
+                <li><a href="#">المتجر</a></li>
             </ul>
         </nav>
     </header>
@@ -157,10 +32,21 @@ button:hover {
             <button>VIP</button>
         </div>
 
+        <div class="store">
+            <div class="item">
+                <span class="special-tag">عرض خاص</span>
+                <h2>سكن خاص فيك بس تكون مصممه</h2>
+                <ul>
+                    <li>سكن خاص بيك شخصيا</li>
+                    <li>30 يوم</li>
+                </ul>
+                <span class="price">2m كريديت</span>
+                <button>شراء الآن</button>
+            </div>
 
             <div class="item">
                 <span class="special-tag">عرض خاص</span>
-                <h2>M4</h2>
+                <h2>m4/h2>
                 <p>سلاح قوي مع دقة عالية ومدى بعيد</p>
                 <ul>
                     <li>75 المدى</li>
