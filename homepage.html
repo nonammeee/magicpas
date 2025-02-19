@@ -4,6 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>خادم MTA - Magic Ps</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #111;
+            padding: 10px;
+            position: relative;
+        }
+
+        .nav-item {
+            background-color: #222;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            position: relative;
+            transition: background 0.3s;
+        }
+
+        .nav-item:hover {
+            background-color: #333;
+        }
+
+        .nav-item.active::after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 10%;
+            width: 80%;
+            height: 3px;
+            background-color: limegreen;
+            border-radius: 5px;
+        }
+    </style>
 <style>
  body {
   background: black;
