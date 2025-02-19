@@ -154,6 +154,26 @@ nav ul li a:hover {
 
     </style>
 <style> /* لا مسح*/
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    background-color: black; /* خلفية سوداء */
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #004400; /* إطار أخضر */
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: #008000; /* أخضر فاتح عند التمرير */
+}
+
+nav ul li a:active {
+    background-color: black; /* عند الضغط يعود للأسود */
+}
+
+
 header {
     background-color: #111;
     padding: 10px 0;
