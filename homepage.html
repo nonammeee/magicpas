@@ -244,44 +244,6 @@ nav ul li a:hover {
     display: inline-block;
     margin-top: 10px;
 }
-/* تنسيق شريط التنقل */
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li {
-    position: relative;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 15px;
-    display: inline-block;
-    position: relative;
-}
-
-/* الخط الأخضر عند تمرير الماوس */
-nav ul li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px; /* المسافة بين النص والخط */
-    width: 0;
-    height: 3px;
-    background-color: green;
-    transition: width 0.3s ease-in-out;
-}
-
-/* ظهور الخط الأخضر عند تمرير الماوس */
-nav ul li a:hover::after {
-    width: 100%;
-}
 
 /* إبقاء الخط تحت زر "رئيسيه" فقط */
 nav ul li a[href="homepage.html"]::after {
