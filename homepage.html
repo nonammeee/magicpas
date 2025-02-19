@@ -260,13 +260,13 @@ nav ul li a:hover {
 <script>
 async function getServerInfo() {
     try {
-        const response = await fetch("server-info.php");
+        const response = await fetch("https://api.game-state.com/142.93.97.229:22500/");
         const data = await response.json();
 
         if (data.error) {
-            document.getElementById("playersCount").innerHTML = data.error;
+            document.getElementById("playersCount").innerHTML = "خطأ: " + data.error;
         } else {
-            document.getElementById("playersCount").innerHTML =
+            document.getElementById("playersCount").innerHTML = 
                 `عدد اللاعبين المتصلين: ${data.players} / ${data.maxplayers}`;
         }
     } catch (error) {
@@ -274,10 +274,10 @@ async function getServerInfo() {
     }
 }
 
-// تحديث البيانات كل 10 ثوانٍ
 setInterval(getServerInfo, 10000);
 getServerInfo();
 </script>
+
 
         <div class="box">
             <h2>قوانين الخادم</h2>
