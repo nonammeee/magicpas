@@ -328,6 +328,26 @@ button {
 button:hover {
     background: #0c0;
 }
+.categories {
+    margin: 20px 0;
+    display: flex;         /* لجعل الأزرار تتجاور أفقياً */
+    justify-content: center; /* لتوسيطها أفقياً */
+    flex-wrap: wrap;       /* يسمح بانتقال الأزرار لسطر جديد عند صغر الشاشة */
+    gap: 10px;             /* مسافة بين الأزرار */
+}
+
+.categories button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;       /* تحكم في حجم الخط */
+    min-width: 100px;      /* تحكم في عرض الزر */
+    transition: 0.3s;
+}
+
     </style>
 </head>
 <body>
@@ -347,14 +367,15 @@ button:hover {
         <h1>متجر اللعبة</h1>
         <p>اكتشف مجموعتنا الحصرية من العناصر والمميزات</p>
 
-        <div class="categories">
-            <button class="active">الكل</button>
-            <button>أسلحة</button>
-            <button>سيارات</button>
-            <button>ملابس</button>
-            <button>عملات</button>
-            <button>VIP</button>
-        </div>
+<div class="categories">
+    <button class="active">الكل</button>
+    <button>أسلحة</button>
+    <button>سيارات</button>
+    <button>ملابس</button>
+    <button>عملات</button>
+    <button>VIP</button>
+</div>
+
 
         <div class="store">
             <div class="item">
