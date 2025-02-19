@@ -5,23 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>متجر الأسلحة</title>
 <style>
+/* تنسيق القائمة الجانبية */
 .sidebar {
     text-align: right;
-    margin-right: 20px;
-    font-size: 16px;
-    color: #00ff00; /* لون أخضر مطابق للتصميم */
+    margin-right: 30px; /* زيادة المسافة بين القائمة والمنتجات */
+    font-size: 18px;
+    color: #00ff00;
 }
 
 .sidebar ul {
-    list-style-position: inside;
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+/* تنسيق المنتجات */
+.store-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* تباعد بين المنتجات */
 }
 
 .product-card {
-    text-align: center;
-    padding: 10px;
     background: #1a1a1a;
+    padding: 15px;
     border-radius: 10px;
+    box-shadow: 0 0 10px #00ff00;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    width: 250px; /* حجم البطاقة */
 }
+
+.product-card:hover {
+    box-shadow: 0 0 20px #00ff00;
+}
+
+/* تحسين تنسيق النص داخل البطاقة */
+.product-card h2 {
+    color: #ffffff;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.product-card p {
+    color: #cccccc;
+}
+
+.product-card a {
+    color: #00ff00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 
 body {
     font-family: Arial, sans-serif;
