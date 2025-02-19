@@ -5,27 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>خادم MTA - Magic Ps</title>
 <style>
-.button {
-    background-color: transparent; /* إزالة الخلفية */
-    color: white; /* جعل النص أبيض */
-    font-size: 16px; /* ضبط حجم النص */
-    font-weight: bold; /* جعل الخط عريض */
-    padding: 10px 20px; /* ضبط الهوامش الداخلية */
-    border: none; /* إزالة الإطار */
-    position: relative; /* تحديد موضع للخط السفلي */
-    cursor: pointer;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
-
-.button::after {
-    content: ""; /* عنصر إضافي لإنشاء الخط */
-    position: absolute;
-    left: 0;
-    bottom: -5px; /* تحديد المسافة بين النص والخط */
+/* إبقاء الخط تحت زر "المتجر" فقط */
+nav ul li a[href="store.html"]::after {
     width: 100%;
-    height: 3px; /* سماكة الخط */
-    background-color: green; /* لون الخط */
 }
 
+
+nav {
+    background-color: #222;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #00ff00;
+}
+
+h1 {
+    color: #00ff00;
+    margin-top: 20px;
+}
+
+.categories {
+    margin: 20px 0;
+}
+
+.categories button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.categories button.active,
+.categories button:hover {
+    background-color: #00ff00;
+}
+
+.store {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.item {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.item h2 {
+    color: #00ff00;
+}
+
+.item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.item ul li {
+    margin: 5px 0;
+}
+
+.price {
+    display: block;
+    font-size: 20px;
+    margin: 10px 0;
+    color: #00ff00;
+}
+
+button {
+    background-color: #00ff00;
+    color: #111;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #008000;
+}
+
+.vip-tag, .special-tag, .exclusive-tag {
+    display: block;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.vip-tag { background-color: gold; color: black; }
+.special-tag { background-color: red; }
+.exclusive-tag { background-color: yellow; color: black; }
 /* خلفية الشريط العلوي */
 nav {
     background-color: #222;       /* خلفية داكنة */
@@ -50,6 +157,30 @@ nav ul li {
     position: relative;          /* للسماح بوضع التأثيرات */
 }
 
+/* الروابط */
+nav ul li a {
+    display: block;
+    background: #111;            /* لون خلفية الأزرار */
+    color: #fff;                 /* لون النص */
+    text-decoration: none;       /* إزالة التسطير */
+    padding: 10px 20px;          /* حواف داخلية */
+    border-radius: 8px;          /* زوايا منحنية */
+    font-size: 16px;             /* حجم النص */
+    transition: 0.3s;            /* انتقال للتأثير */
+    box-shadow: 0 0 2px rgba(0, 255, 0, 0.2);
+}
+
+/* تأثير اللمسة الخضراء أسفل الزر */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;                   /* في الأسفل تمامًا */
+    left: 0;
+    width: 0%;                   /* العرض صفر افتراضيًا */
+    height: 4px;                 /* سماكة الشريط الأخضر */
+    background: #0f0;            /* اللون الأخضر */
+    transition: width 0.3s;      /* انتقال عند التمرير */
+    border-radius: 0 0 8px 8px;  /* زوايا سفلية منحنية */
 }
 
 /* عند التحويم فوق الزر */
@@ -58,157 +189,12 @@ nav ul li a:hover {
     background: #111;            /* حافظ على نفس اللون */
 }
 
-
-/* ✅ تحسين نموذج تسجيل الدخول */
-.form-container {
-    background: #111;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
-    width: 350px;
-    margin: auto;
-    text-align: center;
+/* تكبير الشريط الأخضر عند التحويم */
+nav ul li a:hover::after {
+    width: 100%;                 /* يمتد عرض الشريط الأخضر */
 }
 
-.form-container h2 {
-    color: #0f0;
-    margin-bottom: 15px;
-}
-
-.form-container input {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 2px solid #0f0;
-    border-radius: 5px;
-    background: #222;
-    color: white;
-}
-
-.form-container button {
-    width: 95%;
-    padding: 12px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 5px;
-    background: #0f0;
-    color: black;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.form-container button:hover {
-    background: #00cc00;
-    transform: scale(1.05);
-}
-
-        /* إعدادات عامة */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-            direction: rtl; /* دعم اللغة العربية */
-        }
-
-        body {
-            background-color: #121212;
-            color: white;
-            text-align: center;
-        }
-
-       
-        /* تنسيق العنوان الرئيسي */
-        h1 {
-            margin: 20px 0;
-            font-size: 36px;
-        }
-
-        /* تنسيق الأقسام */
-        section {
-            background: #1e1e1e;
-            padding: 20px;
-            margin: 20px auto;
-            width: 80%;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-        }
-
-        /* زر نسخ عنوان السيرفر */
-        button {
-            background: #0f0;
-            color: black;
-            border: none;
-            padding: 10px 15px;
-            margin-top: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background: #0c0;
-        }
-
-    </style>
-<style> /* لا مسح*/
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    background-color: black; /* خلفية سوداء */
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: 1px solid #004400; /* إطار أخضر */
-    display: inline-block;
-    transition: all 0.3s ease-in-out;
-}
-
-nav ul li a:hover {
-    background-color: #008000; /* أخضر فاتح عند التمرير */
-}
-
-nav ul li a:active {
-    background-color: black; /* عند الضغط يعود للأسود */
-}
-
-
-header {
-    background-color: #111;
-    padding: 10px 0;
-    text-align: center;
-    border-bottom: 3px solid #004400; /* خط سفلي أخضر */
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-nav ul li {
-    display: inline-block;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    background-color: black;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: 1px solid #004400; /* إطار أخضر */
-    display: inline-block;
-    transition: all 0.3s ease-in-out;
-}
-
-nav ul li a:hover {
-    background-color: #004400; /* تغيير الخلفية عند التمرير */
-}
- </style>
+</style>
   <style>
 .team-container {
     display: flex;
