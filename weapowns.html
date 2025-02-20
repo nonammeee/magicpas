@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر الأسلحة</title>
-<style>.store-header {
+    <title>الاسلحة</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+.store-header {
     text-align: center;
     color: #00ff00;
     font-family: Arial, sans-serif;
@@ -45,106 +47,303 @@
 .categories a:hover {
     background: #00ff00;
     color: black;
-}</style>
-<style>
-.categories-container {
-    display: flex;
-    justify-content: center; /* توسيط الأزرار أفقياً */
-    align-items: center;
-    margin-bottom: 20px; /* إضافة مسافة بين الأزرار والأسلحة */
+}
+body {
+    background-color: #111 !important;
+}
+/* إبقاء الخط تحت زر "المتجر" فقط */
+nav ul li a[href="store.html"]::after {
+    width: 100%;
 }
 
-.categories {
+textarea {
+    background-color: #222 !important;
+    color: white !important;
+}
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #222; /* اجعلها بنفس لون الخلفية الداكن */
+    border: 1px solid #0f0; /* حدود بنفس لون الحقول الأخرى */
+    color: white; /* لون النص */
+    border-radius: 5px;
+    resize: none; /* منع تغيير الحجم */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+    direction: rtl; /* دعم اللغة العربية */
+}
+
+/* ✅ تحسين شريط التنقل */
+nav {
+    background: #222;
+    padding: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
     display: flex;
     gap: 15px; /* مسافة بين الأزرار */
     padding: 0;
-    list-style: none;
+    margin: 0;
 }
 
-.categories li {
-    display: inline-block;
+nav ul li {
+    position: relative;
 }
 
-.categories a {
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    background-color: #222;
+nav ul li a {
+    display: block;
+    background: #111; /* خلفية الأزرار */
     color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
     transition: 0.3s;
+    font-size: 16px;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* ✅ تحسين التأثير عند التحويم */
+nav ul li a:hover {
+    transform: scale(1.05);
+    background: #111; /* تأكيد أن اللون لا يتغير */
+    color: white;
+}
+
+/* ✅ الشريط الأخضر السفلي عند التحويم */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: #0f0;
+    transition: width 0.3s;
+    border-radius: 0 0 8px 8px;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* ✅ تحسين نموذج تسجيل الدخول */
+.form-container {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    width: 350px;
+    margin: auto;
     text-align: center;
 }
 
-.categories a.active {
-    background-color: limegreen;
+.form-container h2 {
+    color: #0f0;
+    margin-bottom: 15px;
+}
+
+.form-container input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #0f0;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+}
+
+.form-container button {
+    width: 95%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #0f0;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-container button:hover {
+    background: #00cc00;
+    transform: scale(1.05);
+}
+
+/* ✅ تحسين التذييل */
+footer {
+    background: #222;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 14px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+    </style>
+
+<style>/* إعدادات عامة */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f0f0f;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* شريط التنقل */
+.navbar {
+    background-color: #1a1a1a;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    border-bottom: 2px solid #00ff00;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #222;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #00ff00;
     color: black;
 }
 
-/* ضبط توسيط قسم الأسلحة */
-.weapons-container {
-    display: flex;
-    justify-content: center; /* توسيط الكروت أفقياً */
-    gap: 20px;
-}
-
-/* تنسيق القائمة الجانبية */
-.store-header {
-    text-align: right;
-}
-.sidebar {
-    text-align: right;
-    margin-right: 30px; /* زيادة المسافة بين القائمة والمنتجات */
-    font-size: 18px;
+/* العنوان */
+.store-title {
+    font-size: 30px;
     color: #00ff00;
+    margin: 20px 0;
 }
 
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin-bottom: 10px;
-}
-
-/* تنسيق المنتجات */
-.store-container {
+/* أزرار التصنيف */
+.categories {
     display: flex;
     justify-content: center;
-    gap: 20px; /* تباعد بين المنتجات */
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
+.categories button {
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.categories button.active {
+    background-color: #00ff00;
+    color: black;
+}
+
+.categories button:hover {
+    background-color: #00ff00;
+    color: black;
+}
+
+/* عرض المنتجات */
+.products-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* تصميم البطاقات */
 .product-card {
-    background: #1a1a1a;
-    padding: 15px;
+    background-color: #1a1a1a;
+    border: 2px solid #00ff00;
     border-radius: 10px;
-    box-shadow: 0 0 10px #00ff00;
+    width: 300px;
+    padding: 20px;
     text-align: center;
-    transition: 0.3s ease-in-out;
-    width: 250px; /* حجم البطاقة */
+    transition: 0.3s;
 }
 
 .product-card:hover {
-    box-shadow: 0 0 20px #00ff00;
+    box-shadow: 0px 0px 15px #00ff00;
 }
 
-/* تحسين تنسيق النص داخل البطاقة */
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
 .product-card h2 {
-    color: #ffffff;
-    font-size: 20px;
+    font-size: 22px;
+    color: #00ff00;
     margin: 10px 0;
 }
 
 .product-card p {
-    color: #cccccc;
+    color: #ccc;
+    margin-bottom: 15px;
 }
 
-.product-card a {
+/* زر الشراء */
+.buy-button {
+    display: block;
+    width: 100%;
+    background-color: #00ff00;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #008000;
+}
+
+/* شارات مميزة */
+.badge {
+    position: absolute;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    top: 10px;
+    right: 10px;
+}
+</style>
+<style> .store-header {
+    text-align: center;
     color: #00ff00;
-    text-decoration: none;
-    font-weight: bold;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
 }
 
+.store-header h2 {
+    font-size: 32px;
+   
 
 body {
     font-family: Arial, sans-serif;
@@ -335,387 +534,196 @@ nav ul li a:hover::after {
     width: 100%;                 /* يمتد عرض الشريط الأخضر */
 }
 
-</style>
-    <style>
-/* إبقاء الخط تحت زر "المتجر" فقط */
-nav ul li a[href="store.html"]::after {
-    width: 100%;
-}
-
-/* خلفية الشريط العلوي */
-nav {
-    background-color: #222;       /* خلفية داكنة */
-    padding: 10px 0;             /* مسافة عمودية */
-    display: flex;               /* عرض العناصر أفقياً */
-    justify-content: center;     /* توسيط العناصر */
-    align-items: center;         /* محاذاة رأسية */
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-}
-
-/* إزالة النقط من القائمة */
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;               /* عناصر أفقية */
-    gap: 15px;                   /* مسافة بين الأزرار */
-}
-
-/* العناصر داخل القائمة */
-nav ul li {
-    position: relative;          /* للسماح بوضع التأثيرات */
-}
-
-/* الروابط */
-nav ul li a {
-    display: block;
-    background: #111;            /* لون خلفية الأزرار */
-    color: #fff;                 /* لون النص */
-    text-decoration: none;       /* إزالة التسطير */
-    padding: 10px 20px;          /* حواف داخلية */
-    border-radius: 8px;          /* زوايا منحنية */
-    font-size: 16px;             /* حجم النص */
-    transition: 0.3s;            /* انتقال للتأثير */
-    box-shadow: 0 0 2px rgba(0, 255, 0, 0.2);
-}
-
-/* تأثير اللمسة الخضراء أسفل الزر */
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;                   /* في الأسفل تمامًا */
-    left: 0;
-    width: 0%;                   /* العرض صفر افتراضيًا */
-    height: 4px;                 /* سماكة الشريط الأخضر */
-    background: #0f0;            /* اللون الأخضر */
-    transition: width 0.3s;      /* انتقال عند التمرير */
-    border-radius: 0 0 8px 8px;  /* زوايا سفلية منحنية */
-}
-
-/* عند التحويم فوق الزر */
-nav ul li a:hover {
-    transform: scale(1.05);      /* تكبير بسيط */
-    background: #111;            /* حافظ على نفس اللون */
-}
-
-/* تكبير الشريط الأخضر عند التحويم */
-nav ul li a:hover::after {
-    width: 100%;                 /* يمتد عرض الشريط الأخضر */
-}
-
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #121212;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .register-container {
-            background: #1e1e1e;
-            padding: 20px;
-            border-radius: 10px;
-            width: 350px;
-            text-align: center;
-            box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5);
-        }
-
-        h2 {
-            margin-bottom: 15px;
-            color: #5cff5c;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            text-align: right;
-        }
-
-        label {
-            margin-bottom: 5px;
-            font-size: 14px;
-        }
-
-        input {
-            background: #2a2a2a;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            color: white;
-            margin-bottom: 10px;
-            width: 100%;
-        }
-
-        .password-container {
-            position: relative;
-        }
-
-        .password-container img {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 18px;
-            height: 18px;
-        }
-
-        button {
-            background: #5cff5c;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background: #48d148;
-        }
-
-        p {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-
-        a {
-            color: #5cff5c;
-            text-decoration: none;
-        }
-/* تحسين شريط التنقل */
-nav {
-    background: #222;
-    padding: 15px 0;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-    display: flex;
-    justify-content: center; /* توسيط الأزرار */
-    align-items: center;
-}
-
-/* ضبط الأزرار داخل الشريط */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px; /* مسافة بين الأزرار */
-    padding: 0;
-    margin: 0;
-}
-
-/* تنسيق الأزرار */
-nav ul li a {
-    background: #333;
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: 0.3s;
-    font-size: 16px;
-    display: inline-block;
-    box-shadow: 0 2px 5px rgba(0, 255, 0, 0.2);
-}
-
-/* تأثير التحويم عند تمرير الماوس */
-nav ul li a:hover {
-    background: #0f0;
-    color: black;
-    transform: scale(1.05); /* تأثير بسيط عند التحويم */
-}
-/* ✅ جعل شريط التنقل مثبتًا في الأعلى */
-nav {
-    position: fixed; /* تثبيت الشريط في الأعلى */
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #222;
-    padding: 10px 0;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* ضمان أن يكون فوق العناصر الأخرى */
-}
-
-/* ✅ تحسين شكل الأزرار داخل الشريط */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li a {
-    display: block;
-    background: #111;
-    color: white;
-    text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 8px;
-    transition: 0.3s;
-    font-size: 16px;
-    box-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
-}
-
-nav ul li a:hover {
-    background: #0f0;
-    color: black;
-    transform: scale(1.05);
-}
-
-/* ✅ التأكد من أن محتوى الصفحة يبدأ بعد شريط التنقل */
+</style> 
+<style>/* إعدادات عامة */
 body {
-    padding-top: 80px; /* إضافة مسافة لتجنب تداخل النموذج مع الشريط */
-}
-
-/* ✅ تحسين موضع نموذج التسجيل */
-.form-container {
-    max-width: 400px;
-    margin: auto;
-    background: #111;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    font-family: 'Tajawal', Arial, sans-serif;
+    background-color: #0f0f0f;
+    color: white;
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 
-/* ✅ تحسين الحقول والأزرار */
-input, button {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
+/* شريط التنقل */
+.navbar {
+    background-color: #1a1a1a;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    border-bottom: 2px solid #00ff00;
 }
 
-button {
-    background: #0f0;
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #222;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #00ff00;
     color: black;
-    font-size: 16px;
+}
+
+/* العنوان */
+.store-title {
+    font-size: 32px;
     font-weight: bold;
+    color: #00ff00;
+    margin: 30px 0;
+}
+
+/* أزرار التصنيف */
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.categories button {
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 18px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-button:hover {
-    background: #0c0;
-}
-    </style>
-    <style>
-        body {
-            background-color: #111;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        .store {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 50px;
-        }
-        .item {
-            background: #222;
-            padding: 20px;
-            border-radius: 10px;
-            width: 200px;
-            text-align: center;
-        }
-        .item img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .buy-btn {
-            background: green;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-            border-radius: 5px;
-        }
-        .buy-btn:hover {
-            background: darkgreen;
-        }
-.store-header {
-    text-align: center;
-    color: #00ff00;
-    font-family: Arial, sans-serif;
-    margin-bottom: 20px;
+.categories button.active {
+    background-color: #00ff00;
+    color: black;
 }
 
-.store-header h2 {
-    font-size: 32px;
+.categories button:hover {
+    background-color: #00ff00;
+    color: black;
 }
 
-.categories {
-    list-style: none;
-    padding: 0;
+/* عرض المنتجات */
+.products-container {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
-.categories li {
-    display: inline-block;
-}
-
-.categories a {
-    text-decoration: none;
-    background: #222;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
+/* تصميم البطاقات */
+.product-card {
+    background-color: #1a1a1a;
+    border: 2px solid #00ff00;
+    border-radius: 12px;
+    width: 320px;
+    padding: 20px;
+    text-align: center;
     transition: 0.3s;
+    position: relative;
+}
+
+.product-card:hover {
+    box-shadow: 0px 0px 15px #00ff00;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.product-card h2 {
+    font-size: 24px;
+    color: #00ff00;
+    margin: 15px 0;
+}
+
+.product-card p {
+    color: #ccc;
+    margin-bottom: 15px;
     font-size: 16px;
 }
 
-.categories .active {
-    background: #00ff00;
+/* زر الشراء */
+.buy-button {
+    display: block;
+    width: 100%;
+    background-color: #00ff00;
     color: black;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
 }
 
-.categories a:hover {
-    background: #00ff00;
-    color: black;
+.buy-button:hover {
+    background-color: #008000;
 }
 
-    </style>
+/* شارات مميزة */
+.badge {
+    position: absolute;
+    background-color: red;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+}
+</style>
 </head>
 <body>
-<nav>
-    <ul>
+
+    <nav>
+     <ul>
         <li><a href="store.html">المتجر</a></li>
         <li><a href="admin.html">الإدارة</a></li>
         <li><a href="apply.html">تقديم الإدارة</a></li>
         <li><a href="login.html">تسجيل الدخول</a></li>
         <li><a href="homepage.html">الرئيسية</a></li>
-    </ul>
-</nav>
+       </ul>
+   </nav>
 
-<p>حصرياتنا</p>
-    <ul class="categories">
-        <li><a href="store.html" class="active">الكل</a></li>
-        <li><a href="weapons.html">أسلحة</a></li>
-        <li><a href="cars.html">سيارات</a></li>
-    </ul>
+
+    <main>
+        <h1>متجر اللعبة</h1>
+
+<div class="categories">
+        <li><a href="store.html">الكل</a></li>
+        <li><a href="weapowns.html">أسلحة</a></li>
+        <li><a href="cars.html">السيارات</a></li>
 </div>
 
-    <div class="store">
-        <div class="item">
-            <img src="https://d3vduuaxj0s8t8.cloudfront.net/Custom/Content/Products/18/33/1833400_rifle-m4-ris-co2-full-metal-4-5mm-airgun-semi-automatico-ci020026_m1_637884677840069443.webp" alt="M4">
-            <h3>M4</h3>
-            <p>سلاح هجومي قوي</p>
-<a href="https://discord.gg/emBRnQVzJF">للشراء</a>
-        </div>
-        <div class="item">
-            <img src="https://static2.gunfire.com/eng_ps_RPG-7-grenade-launcher-replica-1152225613_4.webp" alt="RPG">
-            <h3>RPG</h3>
-            <p>قاذف صواريخ مدمر</p>
-<a href="https://discord.gg/emBRnQVzJF">للشراء</a> 
+
+<div class="products-container">
+    <div class="product-card">
+        <span class="badge">عرض خاص</span> <!-- يمكن حذفها إذا لم تكن هناك عروض -->
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2mFod4Uhu2c5JRe92N0ST_PFWsR7AmhIu9Q&s" alt="M4">
+        <h2>M4</h2>
+        <p>سلاح قوي مع دقة عالية ومدى بعيد</p>
+        <p><strong>المدى:</strong> 75 | <strong>الدقة:</strong> 90 | <strong>القوة:</strong> 85</p>
+        <button class="buy-button">شراء الآن - 5m كريدت</button>
     </div>
 
+    <div class="product-card">
+        <span class="badge">حصري</span>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSgo2USa4Lb4qUY4rJ9NJ39lag_2aB80Tgyw&s" alt="سيارة سباق خارقة">
+        <h2>سيارة سباق خارقة</h2>
+        <p>سيارة رياضية فائقة السرعة مع تصميم حصري</p>
+        <p><strong>السرعة:</strong> 300 | <strong>التحكم:</strong> 95 | <strong>التسارع:</strong> 90</p>
+        <button class="buy-button">شراء الآن - 15m كريدت</button>
+    </div>
+</div>
+
+    </main>
 </body>
 </html>
